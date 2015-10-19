@@ -116,7 +116,6 @@ def shell_command(command):
         p = subprocess.Popen(command
                              , stdout=subprocess.PIPE
                              , stderr=subprocess.PIPE)
-
         out, err = p.communicate()
     except Exception as e:
         return '', 'error'
