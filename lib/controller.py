@@ -654,7 +654,7 @@ class CollectinfoController(CommandController):
             print "FAILED! Node Is Not likely In AWS"
             
     def collect_sys(self,line):
-        lsof_cmd='sudo lsof|grep `sudo ps aux|grep -v grep|grep -E \'asd|cld\'|awk \'{print $2}\'` 2>/dev/null'
+        lsof_cmd='sudo lsof -i -n -p $(pgrep -d, "asd|cld") 2>/dev/null'
         print util.shell_command([lsof_cmd])
         print platform.platform()
         smd_home = '/opt/aerospike/smd'
